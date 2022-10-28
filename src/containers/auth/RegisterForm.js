@@ -6,6 +6,7 @@ import { check } from '../../modules/user'
 import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
+    const [error, setError] = useState(null);
     const dispatch = useDispatch();
     const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
         form: auth.register,
@@ -15,7 +16,7 @@ const RegisterForm = () => {
     }));
 
     // 인풋 변경 이벤트 핸들러
-    const onChange = e => {
+    const onChange = (e) => {
         const { value, name } = e.target;
         dispatch(
             changeField({
