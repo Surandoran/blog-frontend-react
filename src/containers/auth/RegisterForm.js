@@ -28,7 +28,7 @@ const RegisterForm = () => {
     };
 
     // 폼 등록 이벤트 핸들러
-    const onSubmit = e => {
+    const onSubmit = (e) => {
         e.preventDefault();
         const { username, password, passwordConfirm } = form;
         // 하나라도 비어 있다면
